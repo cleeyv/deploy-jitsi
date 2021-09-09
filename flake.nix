@@ -3,11 +3,13 @@
 
   # For accessing `deploy-rs`'s utility Nix functions
   inputs.deploy-rs.url = "github:serokell/deploy-rs";
+  inputs.jitsi.url = "github:ngi-nix/jitsi";
 
-  outputs = { self, nixpkgs, deploy-rs }: {
+  outputs = { self, nixpkgs, deploy-rs, jitsi }: {
     nixosConfigurations.team2-jitsi = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [ 
+        jitsi.nixosModules.jitsi
         ./team2-jitsi/configuration.nix
         ./team2-jitsi/users.nix
         ./team2-jitsi/digitalocean.nix
