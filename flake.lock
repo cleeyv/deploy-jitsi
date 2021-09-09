@@ -37,6 +37,24 @@
         "type": "github"
       }
     },
+    "jitsi": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1631208011,
+        "narHash": "sha256-yWJFvilv1BNf/LDLBSO4SiYr593WEnNYkmlMUNVTGwc=",
+        "owner": "ngi-nix",
+        "repo": "jitsi",
+        "rev": "801ead69d7c7c4689a6b768ae95ce9432ecdce57",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ngi-nix",
+        "repo": "jitsi",
+        "type": "github"
+      }
+    },
     "naersk": {
       "inputs": {
         "nixpkgs": [
@@ -76,6 +94,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1631098960,
+        "narHash": "sha256-6j6G/omHEFAnI2x7UvdrviGDNqiq1Fjd1A58Q6uc4sQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "12eb1d16ae3b6cbf0ea83e9228bca8ffd7cfe347",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-21.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1630962513,
         "narHash": "sha256-uGlFJzScCaKuta1b26RifIqyxykUBhgi09+AfXMjptU=",
         "owner": "NixOS",
@@ -91,7 +125,8 @@
     "root": {
       "inputs": {
         "deploy-rs": "deploy-rs",
-        "nixpkgs": "nixpkgs_2"
+        "jitsi": "jitsi",
+        "nixpkgs": "nixpkgs_3"
       }
     },
     "utils": {
