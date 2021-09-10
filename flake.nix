@@ -5,7 +5,7 @@
   inputs.deploy-rs.url = "github:serokell/deploy-rs";
   inputs.jitsi.url = "github:ngi-nix/jitsi";
 
-  outputs = { self, nixpkgs, deploy-rs, jitsi }: {
+  outputs = { self, nixpkgs, deploy-rs, jitsi }: rec {
     nixosConfigurations.team2-jitsi = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [ 
@@ -14,6 +14,7 @@
         ./team2-jitsi/users.nix
         ./team2-jitsi/digitalocean.nix
       ];
+      specialArgs = { inherit self; };
     };
 
     deploy.nodes.team2-jitsi = {

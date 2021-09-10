@@ -1,7 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, jitsi, ... }:
 
 {
-  services.jitsi-meet = {
+  jitsi = {
+    enable = true;
     hostName = "zt.project.zone";
   };
 
