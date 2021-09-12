@@ -23,4 +23,11 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO4p4CqilI3n1GOyGcDgUh1UpwxeHSTIiV4oeHYjF431 cleeyv"
     ];
   };
+  users.users.pallatinus = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL92OWtDtjXDHgv59e1qIltlS1qJQBZ/mjuF3h1YkrFd pallatinus"
+    ];
+  };
 }
