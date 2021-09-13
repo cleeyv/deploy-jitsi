@@ -1,6 +1,10 @@
 { config, pkgs, jitsi, ... }:
 
+
 {
+  networking.hostName = "zt";
+  networking.domain = "project.zone";
+
   jitsi = {
     enable = true;
     hostName = "zt.project.zone";
