@@ -12,4 +12,6 @@
 
   security.acme.email = "tshaynik@protonmail.com";
   security.acme.acceptTerms = true;
+
+  time.timeZone = "America/Montreal";
 }
