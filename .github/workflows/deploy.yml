@@ -1,0 +1,48 @@
+name: "Deploy on Main Merge"
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install nix
+        uses: cachix/install-nix-action@v14
+
+      - uses: cachix/cachix-action@v10
+        with:
+          name: team2-jitsi-ops
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+
+      - name: Install Unstable Channel
+        run: |
+          nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+          nix-channel --update
+
+      - name: Install NixFlakes
+        run: |
+          nix-env -iA nixpkgs.nixFlakes
+          echo 'experimental-features = nix-command flakes' | sudo tee -a /etc/nix/nix.conf
+          nix --version
+          cat /etc/nix/nix.conf
+          echo "$HOME/.nix-profile/bin" >> $GITHUB_PATH
+
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.DEPLOY_WORKFLOW_SSH_PRIVATE_KEY }}
+          known_hosts: 'placeholder'
+
+      - name: Adding Known Hosts
+        run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> $HOME/.ssh/known_hosts
+
+      - name: Deploy Server
+        run: |
+          nix run github:serokell/deploy-rs .
+

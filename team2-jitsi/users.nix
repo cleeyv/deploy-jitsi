@@ -37,4 +37,11 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJSLOxKAuoRC7hQK28XomJU/w6AbDfKDjhRbEyCzcpCE sophrosyne"
     ];
   };
+  users.users.runner = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBpfVfyxyu1tNc6h3roeck1kstevhe92JTsWFSCfFhC+ runner"
+    ];
+  };
 }
