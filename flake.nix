@@ -22,7 +22,7 @@
       hostname = "zt.project.zone";
       profiles.system = {
         user = "root";
-        sshUser = "deploy";
+        sshUser = "root";
         path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.team2-jitsi;
       };
     };
