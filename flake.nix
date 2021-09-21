@@ -15,6 +15,7 @@
         ./team2-jitsi/users.nix
         ./team2-jitsi/digitalocean.nix
         ./team2-jitsi/monitoring.nix
+        ./team2-jitsi/netdata.nix
       ];
       specialArgs = { inherit self; };
     };
