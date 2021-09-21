@@ -12,6 +12,7 @@
 
   security.acme.email = "tshaynik@protonmail.com";
   security.acme.acceptTerms = true;
+  security.sudo.wheelNeedsPassword = false;
 
   time.timeZone = "America/Montreal";
 }
