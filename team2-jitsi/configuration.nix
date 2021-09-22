@@ -2,15 +2,15 @@
 
 
 {
-  networking.hostName = "zt";
-  networking.domain = "project.zone";
+  networking.hostName = "meet";
+  networking.domain = "cleeyv.tech";
 
   jitsi = {
     enable = true;
-    hostName = "zt.project.zone";
+    hostName = "meet.cleeyv.tech";
   };
 
-  security.acme.email = "tshaynik@protonmail.com";
+  security.acme.email = "cleeyv@riseup.net";
   security.acme.acceptTerms = true;
   security.sudo.wheelNeedsPassword = false;
 
