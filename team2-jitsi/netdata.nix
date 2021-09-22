@@ -2,6 +2,8 @@
 
 {
   services.netdata.enable = true;
+  # To enable monitoring notifications 
+  # environment.etc."netdata/health_alarm_notify.conf".source = "./netadata_health_alarm_notify.conf";
 
   # Nginx upstream for reverse proxy to local netdata
   services.nginx.upstreams = {
@@ -10,9 +12,11 @@
   };
 
   # Nginx reverse proxy config
-  services.nginx.virtualHosts."zt-data.cleeyv.tech" = {
+  services.nginx.virtualHosts."data.meet.cleeyv.tech" = {
     enableACME = true;
     forceSSL = true;
+    # To require login to view the dashboard
+    # basicAuthFile = "./netdata_htpasswd";
     locations."/" = {
       proxyPass = "http://netdata_meet";
       extraConfig = ''
