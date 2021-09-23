@@ -42,16 +42,15 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1631555665,
-        "narHash": "sha256-6GO1uH3p5uGVZOLgAp+pxiwiT9g7bkJlZKmFKhkcSZU=",
+        "lastModified": 1632335711,
+        "narHash": "sha256-dYjAljELuuJUKn7kMPtO5xmbNsGHdFxc9bXFzRRuLeE=",
         "owner": "ngi-nix",
         "repo": "jitsi",
-        "rev": "9a0efdd799e81b293ff3382d047db8937f327056",
+        "rev": "25deb0ab4c5de59eabd55f1a3af9c1af934aba34",
         "type": "github"
       },
       "original": {
         "owner": "ngi-nix",
-        "ref": "release6293",
         "repo": "jitsi",
         "type": "github"
       }
@@ -95,16 +94,16 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1631555111,
-        "narHash": "sha256-Qcgnt5qqwUk+efjVSoFU5bIUNcWQQ/lmwoPHwEC529s=",
-        "owner": "tshaynik",
+        "lastModified": 1632176121,
+        "narHash": "sha256-N2oSOhbW38rbc53R1R8qXC/Xstht1PIsAcTzJfmCpTc=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2edaa1213e31f4eefc9ed0b98dfb74e4f1e4db47",
+        "rev": "3397f0ede9ea2ded1f8b6fa689dda71a7a67b806",
         "type": "github"
       },
       "original": {
-        "owner": "tshaynik",
-        "ref": "jitsi-6293",
+        "owner": "NixOS",
+        "ref": "nixos-21.05",
         "repo": "nixpkgs",
         "type": "github"
       }
