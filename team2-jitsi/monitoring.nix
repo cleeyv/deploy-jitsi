@@ -16,13 +16,13 @@
 
     scrapeConfigs = [
       {
-        job_name = "zt-node";
+        job_name = "meet-node";
         static_configs = [{
           targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ];
         }];
       }
       {
-        job_name = "zt-jitsi";
+        job_name = "meet-jitsi";
         static_configs = [{
           targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.jitsi.port}" ];
         }];
@@ -33,7 +33,7 @@
 
   services.grafana = {
     enable = true;
-    domain = "zt-metrics.project.zone";
+    domain = "meet-metrics.cleeyv.tech";
     port = 2342;
     addr = "127.0.0.1";
   };
