@@ -224,6 +224,7 @@ in
   config = mkIf cfg.enable {
     users.groups.jibri = { };
     users.users.jibri = {
+      isSystemUser = true;
       group = "jibri";
       home = "/var/lib/jibri";
       extraGroups = [ "jitsi-meet" "adm" "audio" "video" "plugdev" ];
@@ -252,7 +253,7 @@ in
 
         StateDirectory = "jibri";
 
-        ExecStart = "${pkgs.xorg.xorgserver}/bin/Xorg -nocursor -noreset +extension RANDR +extension RENDER -config ${pkgs.jibri}/etc/jitsi/jibri/xorg-video-dummy.conf -logfile /dev/null :0";
+        ExecStart = "${pkgs.xorg.xorgserver}/bin/Xorg -nocursor -noreset +extension RANDR +extension RENDER -config ${./xorg-video-dummy.conf} -logfile /dev/null :0";
       };
     };
 
@@ -294,9 +295,8 @@ in
         '')
         cfg.xmppEnvironments))
       + ''
-        ${pkgs.jre_headless}/bin/java -Djava.util.logging.config.file=${./logging.properties-journal} -Dconfig.file=${configFile} -jar ${pkgs.jibri}/share/jibri/jibri.jar --config /var/lib/jibri/jibri.json
+        ${pkgs.jre_headless}/bin/java -Djava.util.logging.config.file=${./logging.properties-journal} -Dconfig.file=${configFile} -jar ${pkgs.jibri}/opt/jitsi/jibri/jibri.jar --config /var/lib/jibri/jibri.json
       '';
-
 
       environment.HOME = "/var/lib/jibri";
 
@@ -311,6 +311,13 @@ in
         StateDirectory = "jibri";
       };
     };
+
+    systemd.tmpfiles.rules =
+      [
+        "d /var/log/jitsi/jibri 755 jibri"
+      ];
+
+
 
     # Configure Chromium to not show the "Chrome is being controlled by automatic test software" message.
     environment.etc."chromium/policies/managed/managed_policies.json".text = builtins.toJSON { CommandLineFlagSecurityWarningsEnabled = false; };

@@ -10,7 +10,7 @@
   networking.hostName = "record";
   networking.domain = "cleeyv.tech";
 
-  environment.systemPackages = with pkgs; [ jibri ];
+  environment.systemPackages = with pkgs; [ jibri xorg.xf86videodummy ];
   services.jibri.enable = true;
 
   #jitsi = {
