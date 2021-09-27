@@ -10,6 +10,8 @@
     hostName = "meet.cleeyv.tech";
   };
 
+  services.jitsi-meet.jibri.enable = true;
+
   security.acme.email = "cleeyv@riseup.net";
   security.acme.acceptTerms = true;
   security.sudo.wheelNeedsPassword = false;
