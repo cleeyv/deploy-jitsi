@@ -6,11 +6,11 @@ Here are some useful resources for understanding Jitsi and its place in NixOS, a
 Jitsi source
 -------------
 
-https://github.com/jitsi/jitsi-meet
-https://github.com/jitsi/jitsi-videobridge
-https://github.com/jitsi/jigasi
-https://github.com/jitsi/jicofo
-https://github.com/jitsi/jibri
+* https://github.com/jitsi/jitsi-meet
+* https://github.com/jitsi/jitsi-videobridge
+* https://github.com/jitsi/jigasi
+* https://github.com/jitsi/jicofo
+* https://github.com/jitsi/jibri
 
 Jitsi in Nixpkgs
 ----------------
