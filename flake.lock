@@ -7,11 +7,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1632758936,
-        "narHash": "sha256-7ArwHE6uAGZzgdV3GRb1eYyIKLA5JuyPZRnA+7UqV4Y=",
+        "lastModified": 1632822684,
+        "narHash": "sha256-lt7eayYmgsD5OQwpb1XYfHpxttn43bWo7G7hIJs+zJw=",
         "owner": "serokell",
         "repo": "deploy-rs",
-        "rev": "ea5f2ab58145b2c143f27cbcd64cc2ba4300950c",
+        "rev": "9a02de4373e0ec272d08a417b269a28ac8b961b4",
         "type": "github"
       },
       "original": {
@@ -88,18 +88,14 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1632759713,
-        "narHash": "sha256-lfZWVCnZxVop7AHLc8KEjn1X/mB28LuJGS7/Ws+dBfw=",
-        "owner": "cleeyv",
-        "repo": "nixpkgs",
-        "rev": "3b591fb776d2c46dae0cc0f177d7fa414ff63718",
-        "type": "github"
+        "lastModified": 1633637727,
+        "narHash": "sha256-svBt/OcJjAHEdvocmPTCtaW1D9G7UwSZZQXUApMqeHg=",
+        "type": "git",
+        "url": "file:///home/cleeyv/dev/nixpkgs"
       },
       "original": {
-        "owner": "cleeyv",
-        "ref": "jibri",
-        "repo": "nixpkgs",
-        "type": "github"
+        "type": "git",
+        "url": "file:///home/cleeyv/dev/nixpkgs"
       }
     },
     "root": {

@@ -4,7 +4,9 @@
   # For accessing `deploy-rs`'s utility Nix functions
   inputs.deploy-rs.url = "github:serokell/deploy-rs";
   inputs.jitsi.url = "github:ngi-nix/jitsi";
-  inputs.nixpkgs.url = "github:cleeyv/nixpkgs/jibri";
+  #inputs.nixpkgs.url = "github:cleeyv/nixpkgs/jibri";
+  inputs.nixpkgs.url = "git+file:///home/cleeyv/dev/nixpkgs";
+
 
   outputs = { self, nixpkgs, deploy-rs, jitsi }: rec {
     nixosConfigurations = {
