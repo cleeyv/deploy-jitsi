@@ -10,7 +10,7 @@
   };
 
   # Nginx reverse proxy config
-  services.nginx.virtualHosts."zt-data.cleeyv.tech" = {
+  services.nginx.virtualHosts."data.meet.cleeyv.tech" = {
     enableACME = true;
     forceSSL = true;
     locations."/" = {

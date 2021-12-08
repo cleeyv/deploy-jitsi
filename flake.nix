@@ -1,31 +1,31 @@
 {
-  description = "Deployment for Team 2's jitsi server";
+  description = "Deployment for a Jitsi server on NixOS";
 
   # For accessing `deploy-rs`'s utility Nix functions
   inputs.deploy-rs.url = "github:serokell/deploy-rs";
   inputs.jitsi.url = "github:ngi-nix/jitsi";
-  inputs.nixpkgs.url = "github:tshaynik/nixpkgs/jitsi-6293";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
   outputs = { self, nixpkgs, deploy-rs, jitsi }: rec {
-    nixosConfigurations.team2-jitsi = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.deploy-jitsi = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [ 
+      modules = [
         jitsi.nixosModules.jitsi
-        ./team2-jitsi/configuration.nix
-        ./team2-jitsi/users.nix
-        ./team2-jitsi/digitalocean.nix
-        ./team2-jitsi/monitoring.nix
-        ./team2-jitsi/netdata.nix
+        ./modules/configuration.nix
+        ./modules/users.nix
+        ./modules/digitalocean.nix
+        ./modules/monitoring.nix
+        ./modules/netdata.nix
       ];
       specialArgs = { inherit self; };
     };
 
-    deploy.nodes.team2-jitsi = {
-      hostname = "zt.project.zone";
+    deploy.nodes.deploy-jitsi = {
+      hostname = "meet.cleeyv.tech";
       profiles.system = {
         user = "root";
         sshUser = "deploy";
-        path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.team2-jitsi;
+        path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.deploy-jitsi;
       };
     };
 

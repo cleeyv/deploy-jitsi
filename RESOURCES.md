@@ -33,7 +33,7 @@ Testing on a Digital Ocean VM
 * Use this custom image to create a new droplet, make sure to add your SSH public key in the Authentication part of the creation process.
 * If you don't already have access to the DNS for a domain, register one (can be done for free here https://www.freenom.com/).
 * Enter the IP address DO provides for your new VM as a DNS "A record" for your domain.
-* Create a branch of our repo and set your domain as the hostname for deploy-rs in the flake.nix (as well as anywhere else in the repo that is using the default project.zone domain), and change the email address in the configuration.nix.
+* Create a branch of our repo and set your domain as the hostname for deploy-rs in the flake.nix (as well as anywhere else in the repo that is using the default cleeyv.tech domain), and change the email address in the configuration.nix.
 * Set the sshUser in the flake.nix to root for the initial deploy and probably leave it that way since there is a currently an unresolved, intermittent issue with using the default deploy user).
 * Run deploy-rs on your branch of the repo to do an initial deployment, as described in the README.md file.
 
