@@ -3,7 +3,7 @@
 
   # For accessing `deploy-rs`'s utility Nix functions
   inputs.deploy-rs.url = "github:serokell/deploy-rs";
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  inputs.nixpkgs.url = "github:cleeyv/nixpkgs/backport-chromium";
 
   outputs = { self, nixpkgs, deploy-rs}: rec {
     nixosConfigurations.deploy-jitsi = nixpkgs.lib.nixosSystem {
